@@ -26,10 +26,14 @@ public class Apple {
         };
 
 
-        ConsumerApple(apps,(c)->{
-                System.out.println(c.color+" "+c.weight);
-
+        ConsumerApple(apps, new Consumer<Apple>() {
+            @Override
+            public void accept(Apple apple) {
+                System.out.println(apple.color+" "+apple.weight);
+            }
         });
+
+
     }
 
 }
